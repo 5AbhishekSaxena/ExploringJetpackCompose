@@ -3,8 +3,8 @@ package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab
 import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -24,34 +24,34 @@ import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpac
 data class QuadrantItem(
     val title: String,
     val description: String,
-    val backgroundColor: Color,
-    val alignment: Alignment
+    val backgroundColor: Color
 )
 
 private val quadrants = listOf(
     QuadrantItem(
         title = "Text composable",
         description = "Displays text and follows Material Design guidelines.",
-        backgroundColor = Color.Green,
-        alignment = Alignment.TopStart
+        backgroundColor = Color.Green
     ),
     QuadrantItem(
         title = "Image composable",
         description = "Creates a composable that lays out and draws a given Painter class object.",
-        backgroundColor = Color.Yellow,
-        alignment = Alignment.TopEnd
+        backgroundColor = Color.Yellow
     ),
     QuadrantItem(
         title = "Row composable",
         description = "A layout composable that places its children in a horizontal sequence.",
-        backgroundColor = Color.Cyan,
-        alignment = Alignment.BottomStart
+        backgroundColor = Color.Cyan
     ),
     QuadrantItem(
         title = "Column composable",
         description = "A layout composable that places its children in a vertical sequence.",
-        backgroundColor = Color.LightGray,
-        alignment = Alignment.BottomEnd
+        backgroundColor = Color.LightGray
+    ),
+    QuadrantItem(
+        title = "Column composable",
+        description = "A layout composable that places its children in a vertical sequence.",
+        backgroundColor = Color(0xFFDA7CF3)
     )
 )
 
@@ -60,18 +60,32 @@ fun ComposeQuadrant(
     data: List<QuadrantItem> = quadrants
 ) {
 
-    Box(
+    Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        for (quadrant in data) {
-            QuadrantItemCard(
-                title = quadrant.title,
-                description = quadrant.description,
-                backgroundColor = quadrant.backgroundColor,
-                modifier = Modifier
-                    .align(quadrant.alignment)
-                    .fillMaxSize(0.5f)
-            )
+        var i = 0
+        val constraint = if(data.size % 2 == 0) data.size - 2 else data.size - 1
+        while (i <= constraint) {
+            Row(
+                modifier = Modifier.weight(1f)
+            ) {
+                QuadrantItemCard(
+                    title = data[i].title,
+                    description = data[i].description,
+                    backgroundColor = data[i].backgroundColor,
+                    modifier = Modifier.weight(1f)
+                )
+                if ((i + 1) < data.size) {
+                    QuadrantItemCard(
+                        title = data[i + 1].title,
+                        description = data[i + 1].description,
+                        backgroundColor = data[i + 1].backgroundColor,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+            }
+
+            i += 2
         }
     }
 }
