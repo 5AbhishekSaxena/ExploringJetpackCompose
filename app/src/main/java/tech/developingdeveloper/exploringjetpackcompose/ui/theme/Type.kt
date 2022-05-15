@@ -8,6 +8,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import tech.developingdeveloper.exploringjetpackcompose.R
 
+val PoppingRegular = Font(R.font.poppins)
+val PoppingLight = Font(R.font.poppins_light, weight = FontWeight.Light)
+
+val PoppingFontFamily = FontFamily(listOf(PoppingLight, PoppingRegular))
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     body1 = TextStyle(
