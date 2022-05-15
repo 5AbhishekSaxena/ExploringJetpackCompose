@@ -8,6 +8,7 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.tooling.preview.Preview
+import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.ComposeArticle
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
 @ExperimentalMaterialApi
@@ -29,7 +30,8 @@ class MainActivity : ComponentActivity() {
 private fun ExploringJetpackComposeApp() {
     ExploringJetpackComposeTheme {
         // PhilipContent()
-        HitAndTryContent()
+//        HitAndTryContent()
+        ComposeArticle()
     }
 }
 
