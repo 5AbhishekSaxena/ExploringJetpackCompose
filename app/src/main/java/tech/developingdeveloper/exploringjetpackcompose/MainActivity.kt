@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.tooling.preview.Preview
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_one.business_card.BusinessCard
+import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.DiceApp
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
 @ExperimentalMaterialApi
@@ -34,7 +35,8 @@ private fun ExploringJetpackComposeApp() {
 //        ComposeArticle()
 //        TaskManager()
 //        ComposeQuadrant()
-        BusinessCard()
+//        BusinessCard()
+        DiceApp()
     }
 }
 
