@@ -1,4 +1,4 @@
-package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.business_card
+package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_one.business_card
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.business_card.model.Profile
+import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_one.business_card.model.Profile
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
 @Composable

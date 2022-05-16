@@ -1,4 +1,4 @@
-package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.business_card
+package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_one.business_card
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image

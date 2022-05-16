@@ -1,4 +1,4 @@
-package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab
+package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_one
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
