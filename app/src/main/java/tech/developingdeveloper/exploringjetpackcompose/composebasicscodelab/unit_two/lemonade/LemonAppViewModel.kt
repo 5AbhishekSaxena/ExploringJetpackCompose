@@ -1,6 +1,8 @@
 package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.annotation.StringRes
+import androidx.lifecycle.AndroidViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -8,19 +10,18 @@ import tech.developingdeveloper.exploringjetpackcompose.R
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.click_strategy.DefaultOnClickStrategy
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.click_strategy.RandomMultiClickStrategy
 
-class LemonAppViewModel : ViewModel() {
+class LemonAppViewModel(
+    application: Application
+) : AndroidViewModel(application) {
 
     private var selectedIndex = 0
         set(value) {
             field = value
-            updateCurrentLemonade()
+            onSelectedIndexUpdated()
         }
 
     private val onClickRunnable: () -> Unit = {
-        if (selectedIndex in 0..2)
-            selectedIndex++
-        else
-            selectedIndex = 0
+        selectedIndex++
     }
 
     private val defaultOnClickStrategy = DefaultOnClickStrategy(runnable = onClickRunnable)
@@ -29,27 +30,27 @@ class LemonAppViewModel : ViewModel() {
 
     private val lemonades = listOf(
         LemonadeUiItem(
-            titleRes = R.string.tap_the_lemon_tree_to_select_a_lemon,
+            title = getString(R.string.tap_the_lemon_tree_to_select_a_lemon), // R.string.tap_the_lemon_tree_to_select_a_lemon,
             imageRes = R.drawable.lemon_tree,
-            contentDescriptionRes = R.string.lemon_tree,
+            contentDescription = getString(R.string.lemon_tree),
             onClickStrategy = defaultOnClickStrategy
         ),
         LemonadeUiItem(
-            titleRes = R.string.keep_tapping_the_lemon_to_squeeze_it,
+            title = getString(R.string.keep_tapping_the_lemon_to_squeeze_it),
             imageRes = R.drawable.lemon_squeeze,
-            contentDescriptionRes = R.string.lemon,
+            contentDescription = getString(R.string.lemon),
             onClickStrategy = randomClickStrategy
         ),
         LemonadeUiItem(
-            titleRes = R.string.tap_the_lemonade_to_drink_it,
+            title = getString(R.string.tap_the_lemonade_to_drink_it),
             imageRes = R.drawable.lemon_drink,
-            contentDescriptionRes = R.string.glass_of_lemonade,
+            contentDescription = getString(R.string.glass_of_lemonade),
             onClickStrategy = defaultOnClickStrategy
         ),
         LemonadeUiItem(
-            titleRes = R.string.empty_glass,
+            title = getString(R.string.empty_glass),
             imageRes = R.drawable.lemon_restart,
-            contentDescriptionRes = R.string.empty_glass,
+            contentDescription = getString(R.string.empty_glass),
             onClickStrategy = defaultOnClickStrategy
         ),
     )
@@ -58,8 +59,30 @@ class LemonAppViewModel : ViewModel() {
         MutableStateFlow(lemonades[selectedIndex])
     val currentLemonadeUiItem: StateFlow<LemonadeUiItem> = _currentLemonade.asStateFlow()
 
+    private fun onSelectedIndexUpdated() {
+        resetIfLastLemonade()
+        updateCurrentLemonade()
+    }
+
     private fun updateCurrentLemonade() {
         _currentLemonade.value = lemonades[selectedIndex]
+    }
+
+    private fun resetIfLastLemonade() {
+        if (lemonades.isEmpty())
+            resetSelectedIndex()
+
+        val isLastIndex = selectedIndex == lemonades.lastIndex
+        if (isLastIndex)
+            resetSelectedIndex()
+    }
+
+    private fun resetSelectedIndex() {
+        selectedIndex = 0
+    }
+
+    private fun getString(@StringRes stringRes: Int): String {
+        return getApplication<Application>().getString(stringRes)
     }
 
 }
