@@ -4,41 +4,50 @@ import android.util.Log
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.click_strategy.random.NumberGenerationStrategy
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.click_strategy.random.RandomNumberGenerationStrategy
 
+private const val TAG = "RandomMultiClickStrateg"
+
 class RandomMultiClickStrategy(
     private val numberGenerationStrategy: NumberGenerationStrategy =
         RandomNumberGenerationStrategy(from = 2, to = 4),
     private val runnable: () -> Unit
 ) : OnClickStrategy {
 
-    private var clicks = 0
+    private var clicks = DEFAULT_CLICKS
 
     private var requiredClicks = 0
 
     override fun onClick() {
-        Log.e(javaClass.name, "onClick, clicks: $clicks, requiredClicks: $requiredClicks")
-        if (clicks == 0) {
-            refresh()
+        Log.e(TAG, "onClick, clicks: $clicks, requiredClicks: $requiredClicks")
+        val requiresInitialisation = clicks == DEFAULT_CLICKS
+        if (requiresInitialisation) {
+            initialise()
         }
 
-        if (clicks == requiredClicks) {
+        val shouldExecuteRunnable = clicks == (requiredClicks - 1)
+        if (shouldExecuteRunnable) {
             reset()
             runnable()
+            return
         }
 
         incrementClicks()
     }
 
-    private fun refresh() {
+    private fun initialise() {
         requiredClicks = numberGenerationStrategy.getNumber()
-        Log.e(javaClass.name, "refresh, requiredClicks: $requiredClicks")
+        Log.e(TAG, "setup, requiredClicks: $requiredClicks")
     }
 
     private fun reset() {
-        Log.e(javaClass.name, "reset called")
-        clicks = 0
+        clicks = DEFAULT_CLICKS
+        Log.e(TAG, "reset called, clicks: $clicks")
     }
 
     private fun incrementClicks() {
         clicks++
+    }
+
+    companion object {
+        private const val DEFAULT_CLICKS = 0
     }
 }
