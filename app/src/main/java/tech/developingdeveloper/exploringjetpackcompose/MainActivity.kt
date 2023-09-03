@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.LemonAppViewModel
-import tech.developingdeveloper.exploringjetpackcompose.login.LoginScreen
+import tech.developingdeveloper.exploringjetpackcompose.newsapp.NewsApp
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
 @ExperimentalMaterialApi
@@ -52,6 +52,7 @@ private fun ExploringJetpackComposeApp(lemonViewModel: LemonAppViewModel) {
 //        DiceApp()
 //      better way is to inject using hilt - hiltViewModel() or using VMProviders
 //        LemonadeApp(viewModel = lemonViewModel)
-        LoginScreen()
+//        LoginScreen()
+        NewsApp()
     }
 }
