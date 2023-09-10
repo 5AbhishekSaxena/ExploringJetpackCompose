@@ -6,3 +6,4 @@ val MediumPadding1 = 24.dp
 val MediumPadding2 = 32.dp
 
 val IndicatorSize = 12.dp
+val PageIndicatorWidth = 52.dp
