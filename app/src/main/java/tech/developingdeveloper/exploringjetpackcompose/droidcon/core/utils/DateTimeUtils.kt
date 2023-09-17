@@ -12,7 +12,6 @@ object DateTimeUtils {
             dayOfMonth = dayOfMonth,
             hourOfDay = 0,
             minute = 0,
-            second = 0
         )
     }
 
@@ -22,7 +21,6 @@ object DateTimeUtils {
         dayOfMonth: Int,
         hourOfDay: Int,
         minute: Int,
-        second: Int
     ): Date {
         return Calendar.getInstance().apply {
             set(Calendar.YEAR, year)
@@ -30,7 +28,7 @@ object DateTimeUtils {
             set(Calendar.DAY_OF_MONTH, dayOfMonth)
             set(Calendar.HOUR_OF_DAY, hourOfDay)
             set(Calendar.MINUTE, minute)
-            set(Calendar.SECOND, second)
+            set(Calendar.SECOND, 0)
         }.time
     }
 
