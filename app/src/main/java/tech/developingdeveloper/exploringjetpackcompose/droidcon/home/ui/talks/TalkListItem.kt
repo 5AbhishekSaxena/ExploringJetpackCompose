@@ -37,8 +37,7 @@ fun TalkListItem(
 ) {
     Row(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+            .fillMaxWidth(),
     ) {
         Text(
             text = talkSlot.formattedTime,
@@ -65,7 +64,7 @@ private fun Sessions(
             Session(session)
 
             if (index != sessions.lastIndex) {
-                Spacer(modifier = Modifier.height(4.dp))
+                Spacer(modifier = Modifier.height(6.dp))
             }
         }
     }
