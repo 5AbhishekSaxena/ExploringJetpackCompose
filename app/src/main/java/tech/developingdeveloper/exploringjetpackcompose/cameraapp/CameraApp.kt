@@ -1,4 +1,4 @@
-package tech.developingdeveloper.exploringjetpackcompose.cameraapp.takepicture
+package tech.developingdeveloper.exploringjetpackcompose.cameraapp
 
 import androidx.compose.runtime.Composable
 import tech.developingdeveloper.exploringjetpackcompose.cameraapp.ml.landmark.detection.LandmarkDetectionApp
@@ -6,5 +6,5 @@ import tech.developingdeveloper.exploringjetpackcompose.cameraapp.ml.landmark.de
 @Composable
 fun CameraApp() {
 //    CameraScreen()
-    LandmarkDetectionApp()
+//    LandmarkDetectionApp()
 }

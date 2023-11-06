@@ -10,7 +10,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
-import tech.developingdeveloper.exploringjetpackcompose.cameraapp.takepicture.CameraApp
+import tech.developingdeveloper.exploringjetpackcompose.cameraapp.CameraApp
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.LemonAppViewModel
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
@@ -56,5 +56,6 @@ private fun ExploringJetpackComposeApp(lemonViewModel: LemonAppViewModel) {
 //        NewsApp()
 //        RuntimePermissionsApp()
         CameraApp()
+//        UserDetailsFormUnlabelled()
     }
 }
