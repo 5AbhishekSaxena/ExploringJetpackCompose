@@ -10,8 +10,8 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import tech.developingdeveloper.exploringjetpackcompose.cameraapp.takepicture.CameraApp
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.LemonAppViewModel
-import tech.developingdeveloper.exploringjetpackcompose.permissions.RuntimePermissionsApp
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
 @ExperimentalMaterialApi
@@ -54,6 +54,7 @@ private fun ExploringJetpackComposeApp(lemonViewModel: LemonAppViewModel) {
 //        LemonadeApp(viewModel = lemonViewModel)
 //        LoginScreen()
 //        NewsApp()
-        RuntimePermissionsApp()
+//        RuntimePermissionsApp()
+        CameraApp()
     }
 }
