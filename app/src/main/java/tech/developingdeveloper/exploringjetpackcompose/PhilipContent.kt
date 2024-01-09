@@ -116,7 +116,7 @@ fun PhilipContent() {
 //        AnimationPlayground()
 //        CircularProgressBarPlayground()
 //        MusicKnobPlayground()
-        SimpleTimerPlayground()
+    SimpleTimerPlayground()
 }
 
 
@@ -139,7 +139,7 @@ fun MyCard() {
 @Composable
 fun ImageCard(
     cardImage: CardImage,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
@@ -323,7 +323,7 @@ private fun NameTextField(
     text: String,
     modifier: Modifier = Modifier,
     keyboardActions: () -> Unit,
-    onValueChanged: (String) -> Unit
+    onValueChanged: (String) -> Unit,
 ) {
     TextField(
         value = text,
@@ -347,7 +347,7 @@ fun hideKeyboardAndShowSnackbar(
     keyboardController: SoftwareKeyboardController?,
     scaffoldState: ScaffoldState,
     text: String,
-    coroutineScope: CoroutineScope
+    coroutineScope: CoroutineScope,
 ) {
     hideKeyboard(keyboardController)
     showSnackbar(coroutineScope, scaffoldState, text)
@@ -361,7 +361,7 @@ private fun hideKeyboard(keyboardController: SoftwareKeyboardController?) {
 private fun showSnackbar(
     coroutineScope: CoroutineScope,
     scaffoldState: ScaffoldState,
-    text: String
+    text: String,
 ) {
     coroutineScope.launch {
         scaffoldState.snackbarHostState.showSnackbar("Hello $text")
@@ -750,7 +750,7 @@ fun CircularProgressBar(
     strokeColor: Color = Color.Green,
     strokeWidth: Dp = 8.dp,
     animationDurationMillis: Int = 1000,
-    animationDelayMillis: Int = 0
+    animationDelayMillis: Int = 0,
 ) {
     var isAnimationPlayed by remember { mutableStateOf(false) }
 
@@ -844,7 +844,7 @@ fun MusicKnobPlayground() {
 fun MusicKnob(
     modifier: Modifier = Modifier,
     limitingAngle: Float = 25f,
-    onValueChange: (Float) -> Unit
+    onValueChange: (Float) -> Unit,
 ) {
     var rotation by remember {
         mutableStateOf(limitingAngle)
@@ -883,7 +883,8 @@ fun MusicKnob(
 
                 when (it.action) {
                     MotionEvent.ACTION_DOWN,
-                    MotionEvent.ACTION_MOVE -> {
+                    MotionEvent.ACTION_MOVE,
+                    -> {
                         if (angle !in -limitingAngle..limitingAngle) {
                             val fixedAngle = calculateFixedAngle(angle, limitingAngle)
                             rotation = fixedAngle
@@ -893,6 +894,7 @@ fun MusicKnob(
                             true
                         } else false
                     }
+
                     else -> false
                 }
             }
@@ -911,7 +913,7 @@ private fun calculateFixedAngle(angle: Float, limitingAngle: Float): Float {
 fun VolumeBar(
     modifier: Modifier = Modifier,
     activeBars: Int = 0,
-    barCount: Int = 10
+    barCount: Int = 10,
 ) {
     BoxWithConstraints(
         contentAlignment = Alignment.Center,
@@ -962,7 +964,7 @@ fun SimpleTimer(
     strokeWidth: Dp = 5.dp,
     fontSize: TextUnit = 44.sp,
     fontWeight: FontWeight = FontWeight.Bold,
-    textColor: Color = Color.White
+    textColor: Color = Color.White,
 ) {
     var size by remember {
         mutableStateOf(IntSize.Zero)

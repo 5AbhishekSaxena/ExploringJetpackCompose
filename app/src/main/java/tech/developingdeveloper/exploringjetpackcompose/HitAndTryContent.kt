@@ -45,7 +45,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -94,7 +93,7 @@ private fun ExpandableCardList() {
 @ExperimentalAnimationApi
 fun ExpandableCard(
     expanded: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
 
     val rotationState by animateFloatAsState(
@@ -220,7 +219,7 @@ private fun TitleText() {
 
 @Composable
 private fun TermsAndConditionsText(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
@@ -243,7 +242,7 @@ private fun TermsAndConditionsText(
 @Composable
 private fun TermsAndConditionsAcceptanceCheckbox(
     checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit
+    onCheckedChange: (Boolean) -> Unit,
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -264,7 +263,7 @@ fun AcceptanceButtonRow(
     consentGranted: Boolean,
     onAcceptButtonClick: () -> Unit,
     onDenyButtonClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Row(
         modifier = modifier

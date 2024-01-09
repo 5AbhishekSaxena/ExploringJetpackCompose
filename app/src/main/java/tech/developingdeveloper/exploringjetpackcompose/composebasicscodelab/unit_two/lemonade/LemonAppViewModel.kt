@@ -1,9 +1,5 @@
 package tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade
 
-import android.app.Application
-import android.util.Log
-import androidx.annotation.StringRes
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
