@@ -5,16 +5,11 @@ import kotlin.random.nextInt
 
 class RandomNumberGenerationStrategy(
     private var from: Int,
-    private var to: Int
-): NumberGenerationStrategy {
+    private var to: Int,
+) : NumberGenerationStrategy {
 
     init {
-        if (from > to) {
-            // 5, 2
-            from += to // 7, 2
-            to = from - to // 7, 5
-            from -= to // 2. 5
-        }
+        require(from <= to) { "'from'' should be less than or equal to 'to'" }
     }
 
     override fun getNumber(): Int {
