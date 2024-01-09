@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.annotation.StringRes
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,9 +12,8 @@ import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.uni
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_two.lemonade.click_strategy.RandomMultiClickStrategy
 
 class LemonAppViewModel(
-    application: Application,
     lemonadeRepository: LemonadeRepository = LemonadeRepository(),
-) : AndroidViewModel(application) {
+) : ViewModel() {
 
     private var selectedIndex = 0
         set(value) {
@@ -91,9 +91,5 @@ class LemonAppViewModel(
 
     private fun resetSelectedIndex() {
         selectedIndex = 0
-    }
-
-    private fun getString(@StringRes stringRes: Int): String {
-        return getApplication<Application>().getString(stringRes)
     }
 }
