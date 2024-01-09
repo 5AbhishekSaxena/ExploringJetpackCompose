@@ -7,6 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 
+const val LOGIN_SCREEN_ROUTE = "login_screen"
+
 @Composable
 fun LoginScreen() {
 

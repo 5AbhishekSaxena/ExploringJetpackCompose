@@ -47,19 +47,6 @@ class MainActivity : ComponentActivity() {
 @ExperimentalAnimationApi
 private fun ExploringJetpackComposeApp(lemonViewModel: LemonAppViewModel) {
     ExploringJetpackComposeTheme {
-        // PhilipContent()
-//        HitAndTryContent()
-//        ComposeArticle()
-//        TaskManager()
-//        ComposeQuadrant()
-//        BusinessCard()
-//        DiceApp()
-//      better way is to inject using hilt - hiltViewModel() or using VMProviders
-        LemonadeApp(viewModel = lemonViewModel)
-//        LoginScreen()
-//        NewsApp()
-//        RuntimePermissionsApp()
-//        CameraApp()
-//        UserDetailsFormUnlabelled()
+        MainNavHost()
     }
 }

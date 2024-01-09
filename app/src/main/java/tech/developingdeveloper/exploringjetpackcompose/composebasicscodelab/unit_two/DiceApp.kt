@@ -24,6 +24,8 @@ import androidx.compose.ui.unit.sp
 import tech.developingdeveloper.exploringjetpackcompose.R
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
+const val DICE_ROUTE = "dice"
+
 @Composable
 fun DiceApp() {
     DiceWithButtonAndImage(

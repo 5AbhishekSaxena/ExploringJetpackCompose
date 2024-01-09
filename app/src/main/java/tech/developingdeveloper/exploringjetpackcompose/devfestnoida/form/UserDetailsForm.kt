@@ -324,6 +324,8 @@ private fun RegisterButton(modifier: Modifier = Modifier) {
     }
 }
 
+const val USER_DETAILS_FORM_UNLABELLED_ROUTE = "user_details_form_unlabelled"
+
 @Composable
 fun UserDetailsFormUnlabelled(modifier: Modifier = Modifier) {
     Column(

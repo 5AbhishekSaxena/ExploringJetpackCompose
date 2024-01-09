@@ -54,6 +54,8 @@ import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpac
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.PoppingFontFamily
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.Shapes
 
+const val HIT_AND_TRY_CONTENT_ROUTE = "hit_and_try_content"
+
 @Composable
 @ExperimentalMaterialApi
 @ExperimentalAnimationApi

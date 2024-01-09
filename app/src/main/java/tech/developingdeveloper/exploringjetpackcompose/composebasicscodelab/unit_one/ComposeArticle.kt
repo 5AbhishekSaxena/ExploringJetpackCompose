@@ -4,7 +4,6 @@ import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -18,6 +17,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import tech.developingdeveloper.exploringjetpackcompose.R
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
+
+const val COMPOSE_ARTICLE_ROUTE = "compose_article"
 
 @Composable
 fun ComposeArticle() {

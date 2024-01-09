@@ -19,6 +19,8 @@ import androidx.compose.ui.unit.sp
 import tech.developingdeveloper.exploringjetpackcompose.R
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
+const val TASK_MANAGER_ROUTE = "task_manager"
+
 @Composable
 fun TaskManager() {
     Column(

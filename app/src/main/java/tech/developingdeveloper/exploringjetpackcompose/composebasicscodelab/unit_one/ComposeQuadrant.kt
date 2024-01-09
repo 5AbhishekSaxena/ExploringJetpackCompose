@@ -55,6 +55,8 @@ private val quadrants = listOf(
     )
 )
 
+const val COMPOSE_QUADRANT_ROUTE = "compose_quadrant"
+
 @Composable
 fun ComposeQuadrant(
     data: List<QuadrantItem> = quadrants

@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import tech.developingdeveloper.exploringjetpackcompose.composebasicscodelab.unit_one.business_card.model.Profile
 import tech.developingdeveloper.exploringjetpackcompose.ui.theme.ExploringJetpackComposeTheme
 
+const val BUSINESS_CARD_ROUTE = "business_card"
+
 @Composable
 fun BusinessCard() {
 

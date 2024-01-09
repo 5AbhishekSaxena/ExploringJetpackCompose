@@ -102,6 +102,8 @@ import kotlin.math.roundToInt
 import kotlin.math.sin
 import kotlin.random.Random
 
+const val PHILIP_CONTENT_ROUTE = "philip_content"
+
 @Composable
 fun PhilipContent() {
 //        MyCard()
