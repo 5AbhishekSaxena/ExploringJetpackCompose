@@ -272,11 +272,12 @@ fun WidgetPlayground() {
         modifier = Modifier
             .fillMaxSize(),
         scaffoldState = scaffoldState
-    ) {
+    ) { innerPadding ->
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
+                .padding(innerPadding)
                 .fillMaxSize()
                 .padding(horizontal = 30.dp)
         ) {
@@ -579,7 +580,7 @@ fun SideEffectOtherExample() {
     val scaffoldState = rememberScaffoldState()
     val coroutineScope = rememberCoroutineScope()
 
-    Scaffold(scaffoldState = scaffoldState) {
+    Scaffold(scaffoldState = scaffoldState) { innerPadding ->
         var counter by remember { mutableStateOf(0) }
 
         if (counter % 5 == 0 && counter > 0) {
@@ -594,8 +595,10 @@ fun SideEffectOtherExample() {
             }
         }
 
-        Button(onClick = { counter++ }) {
-            Text(text = "Click Me!: $counter")
+        Column(modifier = Modifier.padding(innerPadding)) {
+            Button(onClick = { counter++ }) {
+                Text(text = "Click Me!: $counter")
+            }
         }
     }
 }
